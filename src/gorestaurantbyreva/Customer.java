@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author Asus
  */
-class Costumer {
+class Customer {
     static String customer_username = "revaprasetya";
     static String customer_password = "reva1234";
     static String customer_location = "Jimbaran, Kuta Selatan, Badung, Bali";

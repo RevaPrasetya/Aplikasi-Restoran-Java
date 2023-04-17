@@ -10,58 +10,83 @@ package gorestaurantbyreva;
  * @author Asus
  */
 public class Restaurant {
-    public int id;
-    public String nama;
-    public String lokasi;
-    public String [][] menu;
-    
-    //RestaurantMenu[] rmenu = new RestaurantMenu[3];
-    
-    //rmenu[0] = new RestaurantMenu(1, this.id, 1, "Burger", 12000);
-    //rmenu[1] = new RestaurantMenu(1, this.id, 1, "Burger", 12000);
- 
-    Restaurant(int id, String nama, String lokasi, String[][] menu)
-    {
+    private int id;
+    private String name;
+    private String location;
+    private RMenu menu;
+
+    public Restaurant(int id, String name, String location, MenuItem[] items) {
         this.id = id;
-        this.nama = nama;
-        this.lokasi = lokasi;
-        this.menu = menu;
-        
+        this.name = name;
+        this.location = location;
+        this.menu = new RMenu(items);
     }
- 
-    public void detail()
-    {
-        System.out.println("Nama Restoran : " + nama);
-        System.out.println("\nLokasi Restoran : " + lokasi);
-        System.out.println("\nBerikut adalah menu di restoran ini :");
-        for (int m = 1; m <= menu.length; m++)
-        {
-            System.out.println(m + ".");
-            for (int i = 0; i < menu[m].length; i++)
-            {
-                if( i == 0){
-                    System.out.println("Nama : " + nama);
-                }
-            }
-        };
-        System.out.println();
+
+    public int getId() {
+        return this.id;
     }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    public RMenu getMenu() {
+        return this.menu;
+    }
+    
+
 }
 
-class RestaurantMenu{
-    public int id;
-    public int restaurant_id;
-    public int jenis;
-    public String nama;
-    public int harga;
- 
-    RestaurantMenu(int id,int restaurant_id, int jenis, String nama, int harga)
-    {
+class RMenu {
+    private MenuItem[] items;
+
+    public RMenu(MenuItem[] items) {
+        this.items = items;
+    }
+
+    public MenuItem[] getItems() {
+        return this.items;
+    }
+
+}
+
+class MenuItem {
+    private int id;
+    private int restaurantId;
+    private String type;
+    private String name;
+    private double price;
+
+    public MenuItem(int id, int restaurantId, String type, String name, double price) {
         this.id = id;
-        this.restaurant_id = restaurant_id;
-        this.jenis = jenis;
-        this.nama = nama;
-        this.harga = harga;
-        
-    }   
+        this.restaurantId = restaurantId;
+        this.type = type;
+        this.name = name;
+        this.price = price;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public int getRestaurantId() {
+        return this.restaurantId;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getPrice() {
+        return this.price;
+    }
+
 }

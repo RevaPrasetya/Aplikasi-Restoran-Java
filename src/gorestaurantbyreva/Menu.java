@@ -36,7 +36,7 @@ public class Menu {
                 Admin.login();
                 break;
             case 2:
-                Costumer.login();
+                Customer.login();
             default:
                 
                 break;
