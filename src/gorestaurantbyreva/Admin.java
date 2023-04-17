@@ -24,11 +24,49 @@ class Admin {
             String password = scanner.nextLine();
 
             if (username.equals(admin_username) && password.equals(admin_password)) {
-                System.out.println("\nLogin berhasil sebagai Admin!");
+                menu();
                 break;
             } else {
                 System.out.println("\nUsername atau password salah, mohon untuk dicoba kembali");
             }
         }
+    }
+    
+    public static void menu(){
+        Scanner scanner = new Scanner(System.in);
+        int userType = 0;
+        while (userType != 1 && userType != 2 && userType != 3 ) {
+            System.out.print("==================================\n");
+            System.out.print("1. Daftar Restoran\n");
+            System.out.print("2. Tambah Restoran\n");
+            System.out.print("3. Kembali ke Login\n");
+            System.out.print("Masukkan angka yang sesuai untuk memilih. ( 1 / 2 )\n");
+            userType = scanner.nextInt();
+            if(userType != 1 && userType != 2 && userType != 3 ){
+                System.out.print("Anda memasukan input yang salah\n\n");
+                System.out.print(userType);
+            }
+        }
+        
+        switch(userType){
+            case 1:
+                restaurants();
+                break;
+            case 2:
+                add_restaurant();
+            case 3:
+                Menu.login();
+            default:
+                
+                break;
+        }
+    }
+    
+    public static void restaurants(){
+        
+    }
+    
+    public static void add_restaurant(){
+        
     }
 }

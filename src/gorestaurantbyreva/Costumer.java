@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package gorestaurantbyreva;
-
 import java.util.Scanner;
 
 /**
@@ -36,5 +35,43 @@ class Costumer {
                 System.out.println("\nUsername atau password salah, mohon untuk dicoba kembali");
             }
         }
+    }
+    
+    public static void menu(){
+        Scanner scanner = new Scanner(System.in);
+        int userType = 0;
+        while (userType != 1 && userType != 2 && userType != 3 ) {
+            System.out.print("==================================\n");
+            System.out.print("1. Buat Pesanan\n");
+            System.out.print("2. Lihat Pesanan\n");
+            System.out.print("3. Kembali ke Login\n");
+            System.out.print("Masukkan angka yang sesuai untuk memilih. ( 1 / 2 )\n");
+            userType = scanner.nextInt();
+            if(userType != 1 && userType != 2 && userType != 3 ){
+                System.out.print("Anda memasukan input yang salah\n\n");
+                System.out.print(userType);
+            }
+        }
+        
+        switch(userType){
+            case 1:
+                add_order();
+                break;
+            case 2:
+                list_order();
+                break;
+            case 3:
+                Menu.login();
+            default:
+                
+                break;
+        }
+    }
+    
+    public static void add_order(){
+        
+    }
+    public static void list_order(){
+        
     }
 }
