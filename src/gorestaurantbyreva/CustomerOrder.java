@@ -10,31 +10,48 @@ package gorestaurantbyreva;
  * @author Asus
  */
 public class CustomerOrder {
-    public int id;
-    public int restaurant_id;
-    public int menu_id;
-    public int kuantitas;
-    public int jarak;
-    public int total_harga;
- 
-    CustomerOrder(int id,int restaurant_id, int menu_id,int kuantitas,  int jarak, int total_harga)
-    {
+    private int id;
+    private int restaurantId;
+    private int menuId;
+    private int quantity;
+    private double totalPrice;
+
+    public CustomerOrder(int id, int restaurantId, int menuId, int quantity, double totalPrice) {
         this.id = id;
-        this.restaurant_id = restaurant_id;
-        this.menu_id = menu_id;
-        this.kuantitas = kuantitas;
-        this.jarak = jarak;
-        this.total_harga = total_harga;
-        
-    }   
-    
-    public void detail()
-    {
-        System.out.println("Id Restoran : " + restaurant_id);
-        System.out.println("\nId Menu : " + menu_id);
-        System.out.println("\nKuantitas : " + kuantitas);
-        System.out.println("\nJarak : " + jarak);
-        System.out.println("\nTotal Harga : " + total_harga);
-        System.out.println();
+        this.restaurantId = restaurantId;
+        this.menuId = menuId;
+        this.quantity = quantity;
+        this.totalPrice = totalPrice;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(int restaurantId) {
+        this.restaurantId = restaurantId;
+    }
+
+    public int getMenuId() {
+        return menuId;
+    }
+
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
 }
+

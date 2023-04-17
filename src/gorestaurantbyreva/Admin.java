@@ -1,4 +1,5 @@
 package gorestaurantbyreva;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -25,9 +26,9 @@ class Admin {
             new MenuItem(2, 3, "Minuman", "Aqua", 6000)
         };
         static Restaurant[] restaurants = {
-            new Restaurant(1, "Karisma Bahari", "Pantai Muaya, Jimbaran", menuKarismaBahari),
-            new Restaurant(1, "KFC Denpasari", "Sudirman, Denpasar", menuKfc),
-            new Restaurant(1, "Warung Robert Legend", "Kampus Unud, Jimbaran", menuRobert)
+            new Restaurant(1, "Karisma Bahari", "Pantai Muaya, Jimbaran", 3 , menuKarismaBahari),
+            new Restaurant(2, "KFC Denpasari", "Sudirman, Denpasar", 30, menuKfc),
+            new Restaurant(3, "Warung Robert Legend", "Kampus Unud, Jimbaran", 7 ,menuRobert)
         };
     static String admin_username = "admin";
     static String admin_password = "admin";
@@ -127,6 +128,7 @@ class Admin {
     
     public static void add_restaurant(Restaurant[] restaurants){
         Scanner scanner = new Scanner(System.in);
+        Random random = new Random();   
         
        System.out.print("ID Restoran: ");
         int id = scanner.nextInt();
@@ -135,7 +137,8 @@ class Admin {
         String name = scanner.nextLine();
         System.out.print("Lokasi: ");
         String location = scanner.nextLine();
-        restaurants = addRestaurant(restaurants, new Restaurant(id, name, location, new MenuItem[0]));
+        int distance = random.nextInt(50); 
+        restaurants = addRestaurant(restaurants, new Restaurant(id, name, location, distance , new MenuItem[0]));
 
         System.out.println("\nDaftar Restoran Terbaru:");
         int i = 1;

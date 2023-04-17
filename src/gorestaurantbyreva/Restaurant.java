@@ -14,11 +14,13 @@ public class Restaurant {
     private String name;
     private String location;
     private RMenu menu;
+    private int distance;
 
-    public Restaurant(int id, String name, String location, MenuItem[] items) {
+    public Restaurant(int id, String name, String location, int distance, MenuItem[] items) {
         this.id = id;
         this.name = name;
         this.location = location;
+        this.distance = distance;
         this.menu = new RMenu(items);
     }
 
@@ -32,6 +34,9 @@ public class Restaurant {
 
     public String getLocation() {
         return this.location;
+    }
+    public int getDistance() {
+        return this.distance;
     }
 
     public RMenu getMenu() {
