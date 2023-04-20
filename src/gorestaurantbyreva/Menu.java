@@ -26,7 +26,7 @@ public class Menu {
             System.out.print("Masukkan angka yang sesuai untuk memilih. ( 1 / 2 )\n");
             userType = scanner.nextInt();
             if(userType != 1 && userType != 2 ){
-                System.out.print("Anda memasukan input yang salah\n\n");
+                System.out.print("Anda memasukan input yang salah\n");
                 System.out.print(userType);
             }
         }
